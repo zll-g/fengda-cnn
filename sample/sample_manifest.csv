@@ -1,0 +1,11 @@
+﻿sample_no,split_index,source_file,run_stage,input_start,input_end,target_start,target_end,input_csv,target_csv,chart
+1,0,4.5-15-16(1).csv,shutdown,2026-04-05T15:01:35,2026-04-05T15:02:34,2026-04-05T15:02:35,2026-04-05T15:03:34,sample_01_input.csv,sample_01_target.csv,sample_01_chart.png
+2,4377,4.7-8-10(1).csv,ramp_up,2026-04-07T09:11:31,2026-04-07T09:12:30,2026-04-07T09:12:31,2026-04-07T09:13:30,sample_02_input.csv,sample_02_target.csv,sample_02_chart.png
+3,8755,4.10-10-16(1).csv,shutdown,2026-04-10T10:46:28,2026-04-10T10:47:27,2026-04-10T10:47:28,2026-04-10T10:48:27,sample_03_input.csv,sample_03_target.csv,sample_03_chart.png
+4,13132,4.10-10-16(1).csv,ramp_up,2026-04-10T11:59:25,2026-04-10T12:00:24,2026-04-10T12:00:25,2026-04-10T12:01:24,sample_04_input.csv,sample_04_target.csv,sample_04_chart.png
+5,17510,4.10-10-16(1).csv,steady_run,2026-04-10T13:12:23,2026-04-10T13:13:22,2026-04-10T13:13:23,2026-04-10T13:14:22,sample_05_input.csv,sample_05_target.csv,sample_05_chart.png
+6,21887,4.10-10-16(1).csv,steady_run,2026-04-10T14:25:20,2026-04-10T14:26:19,2026-04-10T14:26:20,2026-04-10T14:27:19,sample_06_input.csv,sample_06_target.csv,sample_06_chart.png
+7,26265,4.10-10-16(1).csv,steady_run,2026-04-10T15:38:18,2026-04-10T15:39:17,2026-04-10T15:39:18,2026-04-10T15:40:17,sample_07_input.csv,sample_07_target.csv,sample_07_chart.png
+8,30642,4.14-14-18(1).csv,steady_run,2026-04-14T14:53:14,2026-04-14T14:54:13,2026-04-14T14:54:14,2026-04-14T14:55:13,sample_08_input.csv,sample_08_target.csv,sample_08_chart.png
+9,35020,4.14-14-18(1).csv,ramp_up,2026-04-14T16:06:12,2026-04-14T16:07:11,2026-04-14T16:07:12,2026-04-14T16:08:11,sample_09_input.csv,sample_09_target.csv,sample_09_chart.png
+10,39398,4.14-14-18(1).csv,ramp_up,2026-04-14T17:19:10,2026-04-14T17:20:09,2026-04-14T17:20:10,2026-04-14T17:21:09,sample_10_input.csv,sample_10_target.csv,sample_10_chart.png

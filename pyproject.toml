@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fengda-cnn"
+version = "0.1.0"
+description = "Data pipeline and model skeleton for startup boiler NOx/O2 forecasting and FGR recommendation."
+readme = "需求分析-启动锅炉神经网络预测模块.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+train = [
+  "torch>=2.2",
+  "onnx>=1.16",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

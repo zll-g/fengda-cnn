@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1180" viewBox="0 0 1120 1180">
+  <defs>
+    <style>
+      .title { font: 700 28px 'Microsoft YaHei', sans-serif; fill: #17324d; }
+      .subtitle { font: 400 16px 'Microsoft YaHei', sans-serif; fill: #35506b; }
+      .box-title { font: 700 20px 'Microsoft YaHei', sans-serif; fill: #17324d; }
+      .box-text { font: 400 15px 'Consolas', monospace; fill: #17324d; }
+      .box { fill: #f7fbff; stroke: #2d6da3; stroke-width: 2; rx: 16; }
+      .arrow { stroke: #2d6da3; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2d6da3" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="1180" fill="#eef6fb" />
+  <text x="560" y="54" text-anchor="middle" class="title">CNN-LSTM-Attention 结构图</text>
+  <text x="560" y="84" text-anchor="middle" class="subtitle">输入 60 x 24, 输出 60 x 5, 总参数量 288,236</text>
+
+  <rect class="box" x="220" y="120" width="680" height="88" />
+  <text x="560" y="154" text-anchor="middle" class="box-title">Input</text>
+  <text x="560" y="182" text-anchor="middle" class="box-text">shape = [batch, 60, 24]</text>
+
+  <path class="arrow" d="M560 208 L560 236" />
+
+  <rect class="box" x="220" y="236" width="680" height="96" />
+  <text x="560" y="270" text-anchor="middle" class="box-title">Conv1D-1 + ReLU + Dropout</text>
+  <text x="560" y="298" text-anchor="middle" class="box-text">64 channels, kernel = 3, dropout = 0.2</text>
+  <text x="560" y="322" text-anchor="middle" class="box-text">output = [batch, 60, 64], params = 4,672</text>
+
+  <path class="arrow" d="M560 332 L560 360" />
+
+  <rect class="box" x="220" y="360" width="680" height="96" />
+  <text x="560" y="394" text-anchor="middle" class="box-title">Conv1D-2 + ReLU + Dropout</text>
+  <text x="560" y="422" text-anchor="middle" class="box-text">128 channels, kernel = 3, dropout = 0.2</text>
+  <text x="560" y="446" text-anchor="middle" class="box-text">output = [batch, 60, 128], params = 24,704</text>
+
+  <path class="arrow" d="M560 456 L560 484" />
+
+  <rect class="box" x="220" y="484" width="680" height="96" />
+  <text x="560" y="518" text-anchor="middle" class="box-title">LSTM + Dropout</text>
+  <text x="560" y="546" text-anchor="middle" class="box-text">hidden size = 128, dropout = 0.2</text>
+  <text x="560" y="570" text-anchor="middle" class="box-text">output = [batch, 60, 128], params = 132,096</text>
+
+  <path class="arrow" d="M560 580 L560 608" />
+
+  <rect class="box" x="220" y="608" width="680" height="110" />
+  <text x="560" y="642" text-anchor="middle" class="box-title">Additive Attention</text>
+  <text x="560" y="670" text-anchor="middle" class="box-text">projection = 128, score = 1</text>
+  <text x="560" y="694" text-anchor="middle" class="box-text">attention weights = [batch, 60]</text>
+  <text x="560" y="718" text-anchor="middle" class="box-text">context = [batch, 128], params = 16,640</text>
+
+  <path class="arrow" d="M560 718 L560 746" />
+
+  <rect class="box" x="220" y="746" width="680" height="96" />
+  <text x="560" y="780" text-anchor="middle" class="box-title">Dense-1 + ReLU + Dropout</text>
+  <text x="560" y="808" text-anchor="middle" class="box-text">256 neurons, dropout = 0.3</text>
+  <text x="560" y="832" text-anchor="middle" class="box-text">output = [batch, 256], params = 33,024</text>
+
+  <path class="arrow" d="M560 842 L560 870" />
+
+  <rect class="box" x="220" y="870" width="680" height="96" />
+  <text x="560" y="904" text-anchor="middle" class="box-title">Dense-2</text>
+  <text x="560" y="932" text-anchor="middle" class="box-text">300 neurons = 60 steps x 5 targets</text>
+  <text x="560" y="956" text-anchor="middle" class="box-text">output = [batch, 300], params = 77,100</text>
+
+  <path class="arrow" d="M560 966 L560 994" />
+
+  <rect class="box" x="220" y="994" width="680" height="96" />
+  <text x="560" y="1028" text-anchor="middle" class="box-title">Reshape</text>
+  <text x="560" y="1056" text-anchor="middle" class="box-text">forecast = [batch, 60, 5]</text>
+  <text x="560" y="1080" text-anchor="middle" class="box-text">targets = NOx, SO2, O2, Dust, NO2</text>
+
+  <text x="560" y="1140" text-anchor="middle" class="subtitle">可训练层 7 个，功能层 14 个</text>
+</svg>

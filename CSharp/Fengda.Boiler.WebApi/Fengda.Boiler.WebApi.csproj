@@ -1,0 +1,102 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\emissionbounds\Fengda.EmissionBounds\Fengda.EmissionBounds.csproj" />
+    <ProjectReference Include="..\earlywarning\Fengda.EarlyWarning\Fengda.EarlyWarning.csproj" />
+    <ProjectReference Include="..\monitoring\Fengda.Boiler.Monitoring\Fengda.Boiler.Monitoring.csproj" />
+    <ProjectReference Include="..\prediction\Fengda.Cnn.Prediction\Fengda.Cnn.Prediction.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientApp\node_modules\**" />
+    <Content Remove="ClientApp\node_modules\**" />
+    <EmbeddedResource Remove="ClientApp\node_modules\**" />
+    <None Remove="ClientApp\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\EarlyWarning\artifacts\emission_bounds_effective_20260915_to_20261031_stride1_full_20261028\best_model.onnx">
+      <Link>model\emission_bounds\best_model.onnx</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\emission_bounds_effective_20260915_to_20261031_stride1_full_20261028\manifest.json">
+      <Link>model\emission_bounds\manifest.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\emission_bounds_effective_20260915_to_20261031_stride1_full_20261028\normalization.json">
+      <Link>model\emission_bounds\normalization.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\emission_bounds_effective_20260915_to_20261031_stride1_full_20261028\calibration.json">
+      <Link>model\emission_bounds\calibration.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\emission_bounds_effective_20260915_to_20261031_stride1_full_20261028\alert_thresholds.json">
+      <Link>model\emission_bounds\alert_thresholds.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\emission_bounds_effective_20260915_to_20261031_stride1_full_20261028\historical_input_ranges.json">
+      <Link>model\emission_bounds\historical_input_ranges.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\emission_bounds_effective_20260915_to_20261031_stride1_full_20261028\training_summary.json">
+      <Link>model\emission_bounds\training_summary.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\june_2026_export_lstm_ae_v1\best_model.onnx">
+      <Link>model\early-warning\best_model.onnx</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\june_2026_export_lstm_ae_v1\manifest.json">
+      <Link>model\early-warning\manifest.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\june_2026_export_lstm_ae_v1\normalization.json">
+      <Link>model\early-warning\normalization.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\EarlyWarning\artifacts\june_2026_export_lstm_ae_v1\inference_thresholds.json">
+      <Link>model\early-warning\inference_thresholds.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\artifacts\formal_training_1s_60_60_nox_o2_no2_transient_t015_stride1\best_model.onnx">
+      <Link>model\best_model.onnx</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\artifacts\formal_training_1s_60_60_nox_o2_no2_transient_t015_stride1\normalization_stats.json">
+      <Link>model\normalization_stats.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\artifacts\formal_training_1s_60_60_nox_o2_no2_transient_t015_stride1\prepared_data_summary.json">
+      <Link>model\prepared_data_summary.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

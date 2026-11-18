@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/monitoring/">
+    <Project Path="monitoring/Fengda.Boiler.Monitoring/Fengda.Boiler.Monitoring.csproj" />
+  </Folder>
+  <Folder Name="/earlywarning/">
+    <Project Path="earlywarning/Fengda.EarlyWarning/Fengda.EarlyWarning.csproj" />
+  </Folder>
+  <Project Path="OpcUaNodeExporter/OpcUaNodeExporter.csproj" />
+    <Folder Name="/prediction/">
+    <Project Path="prediction/Fengda.Cnn.Prediction/Fengda.Cnn.Prediction.csproj" />
+    </Folder>
+  <Folder Name="/viewer/">
+    <Project Path="viewer/SampleDataViewer.csproj" />
+    <Project Path="viewer/Fengda.Cnn.Training.WinForms/Fengda.Cnn.Training.WinForms.csproj" />
+  </Folder>
+  <Project Path="emissionbounds/Fengda.EmissionBounds/Fengda.EmissionBounds.csproj" />
+  <Project Path="Fengda.Boiler.WebApi/Fengda.Boiler.WebApi.csproj" />
+</Solution>

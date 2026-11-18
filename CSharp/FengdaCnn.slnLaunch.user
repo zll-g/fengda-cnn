@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "新建配置文件",
+    "Projects": [
+      {
+        "Path": "Fengda.Boiler.WebApi\\Fengda.Boiler.WebApi.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
